@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATA.ai - Azərbaycan Tarixi Akademiyası</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="ATA.ai Logo" class="main-logo">
+            <h1>Azərbaycan Tarixi Akademiyası</h1>
+            <p>Süni İntellekt ilə keçmişə səyahət</p>
+        </header>
+
+        <div class="chat-box" id="chatBox">
+            <div class="message bot-message">
+                Salam! Mən ATA.ai. Sizə Azərbaycan tarixinə aid 3000-dən çox sənəd əsasında kömək edə bilərəm. Nəyi öyrənmək istərdiniz?
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Sualınızı bura yazın...">
+            <button onclick="sendMessage()">Göndər</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let input = document.getElementById('userInput');
+            let chatBox = document.getElementById('chatBox');
+            
+            if (input.value.trim() !== "") {
+                chatBox.innerHTML += `<div class="message user-message">${input.value}</div>`;
+                input.value = "";
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
